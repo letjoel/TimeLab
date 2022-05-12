@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hubballi&display=swap");
+
+* {
+  background-color: #275950;
+  font-family: "Hubballi", cursive;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #d4cece;
+  background-color: transparent;
+  font-family: "Bungee Inline", cursive;
+  position: absolute;
+  top: 110px;
+}
+
+h2 {
+  font-size: 30px;
+  font-family: "Hubballi", cursive;
+  background-color: transparent;
+}
+
+header {
+  height: 300px;
+}
+
+#generalWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+}
+@media (max-width: 800px) {
+  #generalWrapper {
+    flex-direction: column;
+  }
+}
+#cabecera {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+#etiquetaH1 {
+  position: absolute;
+  line-height: 40px;
+}
+
+/* Animación Logo ================== */
+
+svg {
+  display: block;
+}
+.slice path {
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+}
+svg.animated .slice path {
+  -webkit-transform-origin: 250px 250px;
+  -ms-transform-origin: 250px 250px;
+  transform-origin: 250px 250px;
+  transition: fill 0.3s linear, transform;
+}
+svg.animated .slice-1 path {
+  stroke: #d4cece;
+  -webkit-animation: draw 3s forwards 1.2s;
+  animation: draw 3s forwards 1.2s;
+}
+@-webkit-keyframes draw {
+  0% {
+    stroke-dashoffset: 650;
+    animation-timing-function: ease-out;
+  }
+  20%,
+  40% {
+    stroke-dashoffset: 400;
+    animation-timing-function: ease-out;
+  }
+  60%,
+  70% {
+    stroke-dashoffset: 250;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 650;
+    animation-timing-function: ease-out;
+  }
+  20%,
+  40% {
+    stroke-dashoffset: 400;
+    animation-timing-function: ease-out;
+  }
+  60%,
+  70% {
+    stroke-dashoffset: 270;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    animation-timing-function: ease-out;
+  }
+}
+.dot {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+svg.animated .center {
+  transform-origin: 250px 250px;
+  stroke: #32bafc;
+  fill: #32bafc;
+  -webkit-animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) forwards;
+  animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) forwards;
+}
+svg.animated .line {
+  transform-origin: 500px 250px;
+  stroke: orange;
+  fill: orange;
+  -webkit-animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) 0.6s forwards;
+  animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) 0.6s forwards;
+}
+svg.animated .arc {
+  transform-origin: 466.5063509461097px 125px;
+  stroke: deepPink;
+  fill: deepPink;
+  -webkit-animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) 1.8s forwards;
+  animation: scaleUp 0.6s cubic-bezier(0, 0.85, 1, 1.58) 1.8s forwards;
+}
+@-webkit-keyframes scaleUp {
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scaleUp {
+  to {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* TIMER ======================= */
+#containerTimer {
+  background-color: #2a8c82;
+  height: 400px;
+  width: 300px;
+  padding: 30px;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  #containerTimer {
+    width: 100%;
+  }
+}
+#relojWrapper {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+#relojSpin {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #a5741a;
+  border: 7px groove #32bafc;
+  border-radius: 50%;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+  z-index: -1;
+}
+
+#reloj {
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  margin-top: 7px;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #d4cece;
+  border: 3px solid #d4cece;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#marcador {
+  font-size: 30px;
+}
+
+/* timer buttons*/
+.controlador {
+  margin: 20px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controlador:hover {
+  background-color: #32bafc;
+  cursor: pointer;
+}
+.controlador2 {
+  margin: 20px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controlador2:hover {
+  background-color: deepPink;
+  cursor: pointer;
+}
+.controlador3 {
+  margin: 20px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controlador3:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+
+.textoMarcadorHoras {
+  display: inline-block;
+}
+
+.textoMarcadorMinutero {
+  display: inline-block;
+}
+
+.textoMarcadorSegundero {
+  display: inline-block;
+}
+.separador {
+  display: inline-block;
+}
+
+/* COUNTDOWN ======================= */
+#containerCountdown {
+  background-color: #41bfb3;
+  height: 400px;
+  width: 300px;
+  padding: 30px;
+  display: inline;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  #containerCountdown {
+    width: 100%;
+  }
+}
+#countdownWrapper {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#countdown {
+  display: flex;
+  align-items: center;
+  width: 175px;
+  height: 175px;
+  /* transform: rotate(45deg); */
+  border: 3px solid #d4cece;
+  margin-top: 15px;
+}
+
+#horasInput {
+  background-color: transparent;
+  color: #d4cece;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+#minutosInput {
+  background-color: transparent;
+  color: #d4cece;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+#segundosInput {
+  background-color: transparent;
+  color: #d4cece;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.separadorCountdown {
+  color: #d4cece;
+  font-size: 30px;
+  background-color: transparent;
+}
+
+/* countdown buttons*/
+.controladorCD {
+  margin: 22px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controladorCD:hover {
+  background-color: #32bafc;
+  cursor: pointer;
+}
+.controlador2CD {
+  margin: 22px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controlador2CD:hover {
+  background-color: deepPink;
+  cursor: pointer;
+}
+.controlador3CD {
+  margin: 22px 3px 3px 3px;
+  padding: 10px;
+  border: 1px dashed #ffffff;
+  background-color: transparent;
+}
+.controlador3CD:hover {
+  background-color: orange;
+  cursor: pointer;
+}
+
+/* CURRENT DATE ======================= */
+#containerTime {
+  background-color: #9bf2ea;
+  height: 400px;
+  width: 300px;
+  padding: 30px;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  #containerTime {
+    width: 100%;
+  }
+}
+#currentDateWrapper {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+}
+#currentDate {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 175px;
+  height: 175px;
+  border: 3px solid #d4cece;
+  margin-top: 15px;
+}
+#date {
+  background-color: transparent;
+  color: #d4cece;
+  font-size: 30px;
+}

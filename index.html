@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Time Lab</title>
+</head>
+
+<body>
+    <header>
+        <div id="cabecera">
+            <svg width="501px" height="300px" viewBox="230 100 300 200" id="container">
+                <g id="slice-1" class="slice slice-1">
+                    <path fill="transparent" stroke="#111" stroke-width="2"
+                        d="M250,250 l250,0 A250,250 0 0,0 466.5063509461097,125 z" />
+                    <!-- <use xlink:href="#icon-photo" width="20" height="20"/>-->
+                </g>
+                <g>
+                    <circle cx="250" cy="250" r="5" class="dot center"></circle>
+                    <circle cx="500" cy="250" r="5" class="dot line"></circle>
+                    <circle cx="466.5063509461097" cy="125" r="5" class="dot arc"></circle>
+                </g>
+            </svg>
+            <div id="etiquetaH1">
+                <h1>Time Lab</h1>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="generalWrapper">
+            <div id="containerTimer">
+                <h2>Timer</h2>
+                <div id="relojWrapper">
+                    <div id="reloj">
+                        <div id="marcador"></div>
+                    </div>
+                    <div id="relojSpin"></div>
+                </div>
+                <button id="start" class="controlador">START</button><button class="controlador2"
+                    id="stop">STOP</button><button class="controlador3" id="reset">RESET</button>
+            </div>
+            <div id="containerCountdown">
+                <h2>Countdown</h2>
+                <div id="countdownWrapper">
+                    <div id="countdown">
+                        <input type="number" name="horas" id="horasInput" min="00" max="99" placeholder="00">
+                        <p class="separadorCountdown">:</p>
+                        <input type="number" name="minutos" id="minutosInput" min="00" max="59" placeholder="00">
+                        <p class="separadorCountdown">:</p><input type="number" name="segundos" id="segundosInput"
+                            min="00" max="59" placeholder="00">
+                    </div>
+                </div>
+                <button id="startCD" class="controladorCD">START</button><button class="controlador2CD"
+                    id="stopCD">STOP</button><button class="controlador3CD" id="resetCD">RESET</button>
+            </div>
+
+            <div id="containerTime">
+                <h2>Current date</h2>
+                <div id="currentDateWrapper">
+                    <div id="currentDate">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+
+
+    </footer>
+    <script src="../scriptTimer.js"></script>
+    <script src="../scriptCountdown.js"></script>
+    <script src="../scriptCurrentDate.js"></script>
+</body>
+
+</html>
