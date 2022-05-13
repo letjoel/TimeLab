@@ -64,6 +64,8 @@ function startCountdown() {
     notificacionStart.play();
     intervalSegundosCD = setInterval(actualizarSegundosCD, 1000);
     startCD.removeEventListener('click', startCountdown);
+    let cuadradoFondo = document.getElementById('countdownBackground');
+    cuadradoFondo.style.zIndex = 0;
 }
 
 function stopCountdown() {
@@ -71,6 +73,8 @@ function stopCountdown() {
     notificacionStop.play();
     clearInterval(intervalSegundosCD);
     startCD.addEventListener('click', startCountdown)
+        let cuadradoFondo = document.getElementById('countdownBackground');
+    cuadradoFondo.style.zIndex = -1;
 }
 
 function resetCountdown() {

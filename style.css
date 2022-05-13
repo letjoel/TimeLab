@@ -146,7 +146,7 @@ svg.animated .arc {
   }
 }
 
-/* TIMER ======================= */
+/* TIMER (chronometer) ======================= */
 #containerTimer {
   background-color: #2a8c82;
   height: 400px;
@@ -292,6 +292,46 @@ svg.animated .arc {
   /* transform: rotate(45deg); */
   border: 3px solid #d4cece;
   margin-top: 15px;
+  z-index: 1;
+}
+#countdownBackground {
+  width: 170px;
+  height: 170px;
+  margin-top: 15px;
+  position: absolute;
+  background-color: #a5741a;
+  border: 6px outset #32bafc;
+  -webkit-animation: squared 3s linear infinite;
+  -moz-animation: squared 3s linear infinite;
+  animation: squared 3s linear infinite;
+  z-index: -1;
+}
+@-moz-keyframes squared {
+  50% {
+    -moz-transform: scale(1.05, 1.05);
+  }
+
+  100% {
+    -moz-transform: scale(1, 1);
+  }
+}
+@-webkit-keyframes squared {
+  50% {
+    -webkit-transform: scale(1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+  }
+}
+@keyframes squared {
+  50% {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.054);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
 }
 
 #horasInput {
@@ -384,19 +424,69 @@ svg.animated .arc {
   display: flex;
   justify-content: center;
   background-color: transparent;
+  z-index: -2;
 }
 #currentDate {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: center;
-  width: 175px;
-  height: 175px;
-  border: 3px solid #d4cece;
   margin-top: 15px;
+  width: 0;
+  height: 0;
+  border-left: 110px solid #9bf2ea;
+  border-right: 110px solid #9bf2ea;
+  border-top: 175px solid transparent;
+  z-index: 1;
+}
+#sandWatch {
+  position: absolute;
+  background-color: #32bafc;
+  z-index: 1;
+  border: 10px groove #32bafc;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 111px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #275950;
+  border-right: 8px solid #275950;
+  border-top: 8px solid transparent;
+  transform: rotate(180deg);
+  -webkit-animation: downArrow 8s linear infinite;
+  -moz-animation: downArrow 8s linear infinite;
+  animation: downArrow 8s linear infinite;
 }
 #date {
   background-color: transparent;
+  margin-right: 12px;
+  width: 100%;
   color: #d4cece;
   font-size: 30px;
+  margin-bottom: 320px;
+}
+#hour {
+  background-color: transparent;
+  margin-right: 116px;
+  width: 100%;
+  color: #d4cece;
+  font-size: 30px;
+  margin-bottom: 250px;
+}
+@-moz-keyframes downArrow {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes downArrow {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes downArrow {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
